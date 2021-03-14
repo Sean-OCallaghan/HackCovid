@@ -20,7 +20,7 @@ def func():
         if zip in disadvantage_data.index.values:
             asthma = disadvantage_data.at[zip, 'Asthma']
             card = disadvantage_data.at[zip, 'Cardiovascular Disease']
-        return asthma + card + age
+        return (asthma*(1.5) + card*(2.5) + age) / 5
 
     input = pd.read_csv('gs://waitlist_input/input.csv')
 
