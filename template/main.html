@@ -18,10 +18,11 @@
 
     <div>
         <div>
-            <input type="file"/>
-            <button class="btn btn-primary" >
-              Upload!
-            </button>
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+                <input type="file" name="document">
+                <button type="submit">Upload File</button>
+            </form>
         </div>
     </div>
 

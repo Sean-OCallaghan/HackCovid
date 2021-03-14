@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.urls import path
 from main.views import mainView
+from main.views import upload
 
 urlpatterns = [
-    path('index/', mainView),
+    path('index/', mainView, name='home'),
+    path('upload/',upload, name='upload'),
 ]
