@@ -23,13 +23,18 @@ def upload(request):
         blob = bucket.blob('input.csv')
         blob.upload_from_filename('input.csv')
 
-        read.func()
+        # client = storage.Client()
+        # bucket = client.get_bucket('waitlist_input')
+        # blob = bucket.blob('input.csv')
+        # blob.upload_from_filename('input.csv')
 
-        blobs = bucket.list_blobs()
-        for blob in blobs:
-            blob.delete()
+        # read.func()
 
-        new_csv = pd.read_csv('newWaitlist.csv')
+        # blobs = bucket.list_blobs()
+        # for blob in blobs:
+        #     blob.delete()
+
+        new_csv = pd.read_csv('input.csv')
         data_html = new_csv.to_html()
         
         content = open("newWaitlist.csv").read()
