@@ -1,15 +1,31 @@
 
     {% extends 'base.html' %}
     {% block content %}
-    <div>
-        <div>
-            <form method="post" enctype="multipart/form-data">
-              {% csrf_token %}
-                <input type="file" name="document">
-                <button type="submit">Upload File</button>
-            </form>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Optimize!</h5>
+                  <h6 class="card-subtitle mb-2 text-muted"></h6>
+                  <p class="card-text">Upload the CSV that has your waiting list, you will then get a download of your optimized list!</p>
+                  <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                      <input type="file" name="document">
+                      <button class="b tn btn-primary"type="submit"style="margin-top:10px">Upload File</button>
+                  </form>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm">
+            <ul>
+                <h3>Requirements of CSV</h3>
+                <li>Name</li>
+                <li>Age</li>
+                <li>Zipcode</li>
+              </ul>
+          </div>
         </div>
-    </div>
-
+      </div>
 
     {% endblock %}
