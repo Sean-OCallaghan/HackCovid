@@ -16,7 +16,7 @@ def upload(request):
     if request.method =='POST':
         uploaded_file = request.FILES['document']
         input = pd.read_csv(uploaded_file)
-        output = pd.DataFrame(input).to_csv('input.csv')
+        pd.DataFrame(input).to_csv('input.csv')
         
         client = storage.Client()
         bucket = client.get_bucket('waitlist_input')
@@ -39,6 +39,6 @@ def upload(request):
         if os.path.exists('newWaitlist.csv'): os.remove('newWaitlist.csv')
 
         
-        return HttpResponse(data_html)
+        # return HttpResponse(data_html)
 
     return render(request,'main.html')
