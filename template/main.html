@@ -1,29 +1,37 @@
 
     {% extends 'base.html' %}
     {% block content %}
-      <div class="container">
+      <div class="container" style="position: fixed; /* or absolute */
+      top: 40%;
+      left: 30%;">
         <div class="row">
           <div class="col-sm">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Optimize!</h5>
-                  <h6 class="card-subtitle mb-2 text-muted"></h6>
-                  <p class="card-text">Upload the CSV that has your waiting list, you will then get a download of your optimized list!</p>
-                  <form method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                      <input type="file" name="document">
-                      <button class="b tn btn-primary"type="submit"style="margin-top:10px">Upload File</button>
-                  </form>
-                </div>
+            <div class="card" style="width: 18rem;border-radius: 10px;">
+              <div class="card-body">
+                <h5 class="card-title"><ul>
+                  <h3>Requirements</h3>
+                  <li>Name</li>
+                  <li>Age</li>
+                  <li>Zipcode</li>
+                  <li>Health</li>
+                </ul></h5>
+                <a href="https://www.mockaroo.com/schemas/new"><button class="b tn btn-primary"  style="margin-top:10px;border-radius: 8px;">Generate CSV</button></a>
               </div>
+            </div>
           </div>
           <div class="col-sm">
-            <ul>
-                <h3>Requirements of CSV</h3>
-                <li>Name</li>
-                <li>Age</li>
-                <li>Zipcode</li>
-              </ul>
+            <div class="card" style="width: 18rem;border-radius: 10px;">
+              <div class="card-body">
+                <h3 class="card-title">Optimize!</h3>
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text">Upload the CSV that has your waiting list, you will then get a download of your optimized list!</p>
+                <form method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                    <input type="file" name="document">
+                    <button class="b tn btn-primary"type="submit"style="margin-top:10px;border-radius: 8px;">Upload File</button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
