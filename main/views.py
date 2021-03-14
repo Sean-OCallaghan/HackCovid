@@ -33,12 +33,10 @@ def upload(request):
         data_html = new_csv.to_html()
         
         content = open("newWaitlist.csv").read()
-        return HttpResponse(content, content_type='text/csv')
 
         if os.path.exists('input.csv'): os.remove('input.csv')
         if os.path.exists('newWaitlist.csv'): os.remove('newWaitlist.csv')
-
         
-        # return HttpResponse(data_html)
+        return HttpResponse(content, content_type='text/csv')
 
     return render(request,'main.html')
