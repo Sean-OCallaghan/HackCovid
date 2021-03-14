@@ -29,7 +29,7 @@ def func():
     for i in range(len(input)):
         scores += [calc_score(input.get('zip')[i], input.get('age')[i])]
 
-    data = {'name': input.get('first_name') + ' ' + input.get('last_name'), 'zip': input.get('zip'), 'age': input.get('age'), 'score': scores}
+    data = {'name': input.get('first_name') + ' ' + input.get('last_name'), 'zip': input.get('zip'), 'age': input.get('age'), 'score': scores, 'email': input.get('email')}
 
     output = pd.DataFrame(data)
     output = output.set_index('name')
